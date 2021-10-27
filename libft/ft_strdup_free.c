@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/11 21:07:15 by mnaji             #+#    #+#             */
-/*   Updated: 2021/10/12 19:50:31 by ahammad          ###   ########.fr       */
+/*   Created: 2019/02/11 21:07:15 by ahammad           #+#    #+#             */
+/*   Updated: 2021/10/14 12:19:09 by ahammad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup_free(char *tofree, char *s)
 	int		i;
 
 	i = 0;
-	if (!(str = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (str == NULL)
 		return (NULL);
 	while (s[i] != '\0')
 	{

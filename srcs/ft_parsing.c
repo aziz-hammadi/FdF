@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/28 11:45:16 by ahammad           #+#    #+#             */
-/*   Updated: 2021/10/12 17:48:36 by ahammad          ###   ########.fr       */
+/*   Updated: 2021/10/27 13:07:12 by ahammad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static int	banck_point(t_map *map, char **split)
 	return (0);
 }
 
-static int	check_line(char *line, t_map *map)
+int	check_line(char *line, t_map *map)
 {
 	char	**split;
 	int		split_size;
@@ -89,21 +89,18 @@ static int	check_map(char *file, t_map *map, int file_height)
 	char	*line;
 	int		fd;
 	int		ret;
+	int		a;
 
+	ret = 0;
 	if (ptr_assign(&fd, open(file, O_RDONLY)) < 0)
 		return (-1);
 	if (!(ft_mllc(&map->z, file_height)))
 		return (-1);
-	while (ptr_assign(&ret, get_next_line(fd, &line)) == 1)
-	{
-		if (*line == '\0')
-			break ;
-		if (check_line(line, map) == -1)
-			return (close(fd));
-		map->height++;
-	}
-	if (ret == 1)
-		free(line);
+	a = new_func(fd, map, &line);
+	if (a == -1)
+		return (close(fd));
+	if (map->height == 0)
+		return (close (fd));
 	if (ret == -1)
 		return (close(fd));
 	while (ptr_assign(&ret, read(fd, line, 1)) != 0)

@@ -6,7 +6,7 @@
 #    By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/28 13:48:33 by ahammad           #+#    #+#              #
-#    Updated: 2021/10/12 17:57:22 by ahammad          ###   ########.fr        #
+#    Updated: 2021/10/27 17:34:21 by ahammad          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ INC_DIR = ./includes/
 LIBFT_DIR = ./libft/
 MINLBX_DIR = ./minilibx_macos/
 
-SRC_FILES = main.c parsing.c deal_hook.c ft_fct.c event.c header.c ft_ternary.c ft_loop_a.c
+SRC_FILES = main.c ft_parsing.c ges_screan.c ft_suppl_fct.c event.c top_bande.c ft_ternary.c ft_loop_a.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
 SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))

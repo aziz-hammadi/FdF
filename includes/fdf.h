@@ -5,7 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 12:48:00 by ahammad           #+#    #+#             */
+/*   Created: 2021/09/28 12:48:00 by ahammad           #+#    #+#             */
 /*   Updated: 2021/10/12 17:55:20 by ahammad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -108,5 +108,7 @@ int				ptr_assign(int *variable, int valeur);
 int				**ft_mllc(int ***mapz, int a);
 int				*ft_mllc_2(int **mapz, int a);
 int				what_buff(char c);
+int				new_func(int fd, t_map *map, char **line);
+int				check_line(char *line, t_map *map);
 
 #endif

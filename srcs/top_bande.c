@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.c                                           :+:      :+:    :+:   */
+/*   top_bande.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -43,7 +43,7 @@ static void	print_arrow_down(void *mlx_ptr, void *win_ptr, double x, int y)
 		mlx_pixel_put(mlx_ptr, win_ptr, x1, y, 0xffffff);
 		x = x + 0.5;
 		x1 = x1 - 0.5;
-		y++;
+		y1++;
 	}
 }
 

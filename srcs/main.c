@@ -93,7 +93,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		ft_putstr("usage : ./fdf file\n");
 	else if (parsing(argv[1], &fdf.map) == -1)
-		ft_putstr("error\n");
+		ft_putstr("Error.\n");
 	else
 	{
 		if (fdf.map.width * fdf.map.height < 1000 && \

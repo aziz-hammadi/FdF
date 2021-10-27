@@ -30,6 +30,23 @@ int	*ft_mllc_2(int **mapz, int a)
 	return (*mapz);
 }
 
+int	new_func(int fd, t_map *map, char **line)
+{
+	int		ret;
+
+	while (ptr_assign(&ret, get_next_line(fd, line)) == 1)
+	{
+		if (**line == '\0')
+			break ;
+		if (check_line(*line, map) == -1)
+			return (-1);
+		map->height++;
+	}
+	if (ret == 1)
+		free(*line);
+	return (0);
+}
+
 int	what_buff(char buff)
 {
 	if (!ft_isdigit(buff))

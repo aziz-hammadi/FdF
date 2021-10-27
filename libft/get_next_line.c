@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mnaji <mnaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 16:48:07 by ahammad           #+#    #+#             */
-/*   Updated: 2021/10/13 23:38:25 by ahammad          ###   ########.fr       */
+/*   Created: 2020/09/28 16:48:07 by ahammad           #+#    #+#             */
+/*   Updated: 2021/10/10 11:41:10 by ahammad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,10 @@ static int	read_file(int fd, char **stock, char **line)
 
 int	get_next_line(int const fd, char **line)
 {
-	static char		*stock[OPEN_MAX];
+	static char		*stock[BUFF_SIZE];
 	int				eof;
 
-	if (!line || fd < 0 || fd > OPEN_MAX || (read(fd, stock[fd], 0) != 0)
+	if (!line || fd < 0 || fd > BUFF_SIZE || (read(fd, stock[fd], 0) != 0)
 		|| BUFF_SIZE <= 0)
 		return (-1);
 	if (stock[fd])

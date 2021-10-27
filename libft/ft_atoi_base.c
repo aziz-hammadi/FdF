@@ -6,11 +6,20 @@
 /*   By: ahammad <ahammad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 22:37:19 by ahammad           #+#    #+#             */
-/*   Updated: 2021/10/12 18:28:34 by ahammad          ###   ########.fr       */
+/*   Updated: 2021/10/14 12:51:59 by ahammad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi_base(const char *nptr, int base)
+#include "libft.h"
+
+int	ft_negativ(const char *nptr, int i)
+{
+	if (nptr[i] == '-')
+		return (-1);
+	return (1);
+}
+
+int	ft_atoi_base(const char *nptr, int base)
 {
 	int		i;
 	int		negativ;
@@ -19,9 +28,9 @@ int		ft_atoi_base(const char *nptr, int base)
 	i = 0;
 	res = 0;
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
-			|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
+		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
 		i++;
-	negativ = (nptr[i] == '-') ? -1 : 1;
+	negativ = ft_negativ(nptr, i);
 	if (nptr[i] == '+' || nptr[i] == '-')
 		i++;
 	while ((nptr[i] <= '9' && nptr[i] >= '0') || \
